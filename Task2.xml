@@ -1,0 +1,21 @@
+
+<students>
+    <Student Sr="23">
+    <studentname>John Carter</studentname>
+    <date>25</date>
+    <month>12</month>
+    <year>2015</year>
+
+        <Student Sr="29">
+            <studentname>Bob Marshal</studentname>
+                <date>13</date>
+                <month>01</month>
+                <year>1999</year>
+
+                 
+                <Student Sr="35">
+                    <studentname>Clark Kent</studentname>
+                        <date>17</date>
+                        <month>06</month>
+                        <year>2005</year>               
+</students>
