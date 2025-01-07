@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertiser Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #3b82f6;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            font-size: 16px;
+        }
+
+        .sidebar a:hover {
+            background-color: #2563eb;
+        }
+
+        .header {
+            background-color: #3b82f6;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-left: 200px;
+            font-size: 18px;
+        }
+
+        .content {
+            margin-left: 200px;
+            padding: 20px;
+            height: calc(100vh - 50px);
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#">- Campaigns</a>
+        <a href="#">- Statistics</a>
+        <a href="#">- Payments</a>
+        <a href="#">- Settings</a>
+        <a href="#">- Logout</a>
+    </div>
+    <div class="header">Advertiser Dashboard</div>
+    <div class="content">
+        <!-- Content goes here -->
+    </div>
+</body>
+</html>
