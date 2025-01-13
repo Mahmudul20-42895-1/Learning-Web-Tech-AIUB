@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register and Search Authors</title>
+</head>
+<body>
+    <h1>Author</h1>
+    <title> Author submit the information </title>
+
+    <div>
+        <h2 id="head" onclick="f1()">Register Author</h2>
+        <form method="post" action="../controller/AuthorController.php" onsubmit="return validateForm()">
+            <label>Name:</label>
+            <input type="text" id="name" name="name"><br>
+
+            <label>Contact No:</label>
+            <input type="text" id="contact_no" name="contact_no"><br>
+
+            <label>Username:</label>
+            <input type="text" id="username" name="username"><br>
+
+            <label>Password:</label>
+            <input type="password" id="password" name="password"><br>
+
+            <button type="submit" name="register">Register</button>
+        </form>
+    </div>
+
+    
+    <form method="post" action="../controller/AuthorSearchController.php" onkeyup="ajaxSearch()">
+        <h2>Search Authors</h2>
+        <input type="text" id="searchInput" name="" value="" onkeyup="ajaxSearch()">
+        <div id="searchResults"></div>
+    </form>
+        
+    <script>
+        
+        function validateForm() {
+            const Name = document.getElementById('name').value;
+            const contactNo = document.getElementById('contact_no').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (!Name || !contactNo || !username || !password) {
+                alert('All fields are required!');
+                return false;
+            }
+
+            return true;
+        }
+        function f1(){
+            
+            let headElement =document.getElementById('head');
+            headElement.innerHTML = "test";
+            headElement.style.color = "red";
+        }
+
+        // AJAX Search function
+        function ajaxSearch() {
+            const keyword = document.getElementById('searchInput').value;
+            const xhttp = new XMLHttpRequest();
+
+            xhttp.open('GET', '../controller/AuthorSearchController.php?keyword=' + keyword, true);
+            xhttp.send();
+
+            xhttp.onreadystatechange = function () {
+                if (this.readyState === 4 && this.status === 200) {
+                    document.getElementById('searchResults').innerHTML = this.responseText;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
